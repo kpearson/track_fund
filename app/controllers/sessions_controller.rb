@@ -46,6 +46,7 @@ class SessionsController < ApplicationController
                     "code" => params["code"]
                   }
     JSON.parse(conn.get("v2.3/oauth/access_token").body)
+
   end
 
   def facebook_graph_url
