@@ -1,13 +1,13 @@
 FactoryGirl.define do
   factory :user do
-    fb_id "MyString"
-first_name "MyString"
-gender "MyString"
-last_name "MyString"
-link "MyString"
-locale "MyString"
-name "MyString"
-token "MyString"
+    uid "MyString"
+    provider "facebook"
+    first_name "Sally"
+    gender "female"
+    last_name "Raphael"
+    link "facebook.com"
+    locale "johannesburg"
+    name "Sally Jessy Raphael"
+    token "tokenstring"
   end
-
 end

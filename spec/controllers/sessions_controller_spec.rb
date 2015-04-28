@@ -8,7 +8,7 @@ RSpec.describe SessionsController, :omniauth do
 
   describe "#create" do
 
-    it "creates a user" do
+    xit "creates a user" do
       expect {post :create, provider: :facebook}.to change{ User.count }.by(1)
     end
 

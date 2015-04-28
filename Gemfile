@@ -32,6 +32,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'vcr'
   gem 'simplecov', require: false
   gem "codeclimate-test-reporter", require: false
   gem 'database_cleaner'
