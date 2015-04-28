@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :token do
     token "MyString"
-provider "MyString"
-user nil
+    provider "MyString"
+    user
   end
 
 end
