@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
   def facebook_login_request
     url            = "dialog/oauth"
     client_id      = "?client_id=#{ENV["FACEBOOK_APPID"]}&"
-    redirect_uri   = "redirect_uri=/http://trackfund.herokuapp.com/auth/facebook/callback"
+    redirect_uri   = "redirect_uri=http://trackfund.herokuapp.com/auth/facebook/callback"
    "https://facebook.com/" + url + client_id + redirect_uri
   end
 
