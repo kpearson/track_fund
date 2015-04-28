@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
   def facebook_login_request
     url            = "dialog/oauth"
     client_id      = "?client_id=#{ENV["FACEBOOK_APPID"]}&"
-    redirect_uri   = "redirect_uri=http://localhost:3000/auth/facebook/callback"
+    redirect_uri   = "redirect_uri=/http://trackfund.herokuapp.com/auth/facebook/callback"
    "https://facebook.com/" + url + client_id + redirect_uri
   end
 
@@ -42,11 +42,10 @@ class SessionsController < ApplicationController
     conn = Faraday.new(facebook_graph_url)
     conn.params = { "client_id" => ENV["FACEBOOK_APPID"],
                     "client_secret" => ENV["FACEBOOK_SECRET"],
-                    "redirect_uri" => "http://localhost:3000/auth/facebook/callback",
+                    "redirect_uri" => "http://trackfund.herokuapp.com/auth/facebook/callback",
                     "code" => params["code"]
                   }
     JSON.parse(conn.get("v2.3/oauth/access_token").body)
-
   end
 
   def facebook_graph_url
