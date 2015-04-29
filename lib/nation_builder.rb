@@ -41,7 +41,7 @@ class NationBuilder
     nation_auth_url = "/oauth/authorize?"
     response_type   = "response_type=code&"
     client_id       = "client_id=#{app_id}&"
-    redirect_uri    = "redirect_uri=#{ENV["CALLBACK_URL"]}//auth/nationbuilder/callback"
+    redirect_uri    = "redirect_uri=#{ENV["CALLBACK_URL"]}/auth/nationbuilder/callback"
     nation_url + nation_auth_url + response_type + client_id + redirect_uri
   end
 
