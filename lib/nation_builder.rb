@@ -41,14 +41,14 @@ class NationBuilder
     nation_auth_url = "/oauth/authorize?"
     response_type   = "response_type=code&"
     client_id       = "client_id=#{app_id}&"
-    redirect_uri    = "redirect_uri=http://localhost:3000/auth/nationbuilder/callback"
+    redirect_uri    = "redirect_uri=#{ENV["CALLBACK_URL"]}//auth/nationbuilder/callback"
     nation_url + nation_auth_url + response_type + client_id + redirect_uri
   end
 
   def token_request(code)
     conn = Faraday.new(nation_url)
     conn.params = { "client_id"     => app_id,
-                    "redirect_uri"  => "http://localhost:3000/auth/nationbuilder/callback",
+                    "redirect_uri"  => "#{ENV["CALLBACK_URL"]}/auth/nationbuilder/callback",
                     "grant_type"    => "authorization_code",
                     "client_secret" => app_secret,
                     "code"          => code
