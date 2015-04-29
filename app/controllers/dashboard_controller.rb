@@ -26,7 +26,7 @@ class DashboardController < ApplicationController
   private
 
   def user_token
-    token_object = current_user.tokens.find_by(provider: "nation_builder")
+    token_object = current_user.tokens.find_by(provider: "nation_builder") if current_user
     token_object.token if token_object
   end
 
