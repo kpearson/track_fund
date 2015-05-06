@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="well">
+      <%= link_to "Create Event", new_event_path, class: "btn btn-primary btn-lg" %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="well">
+      <% @events.each do |event| %>
+        <%= link_to event.name, event_path(event.id), class: "btn btn-primary btn-lg" %>
+      <% end %>
+    </div>
+  </div>
+</div>

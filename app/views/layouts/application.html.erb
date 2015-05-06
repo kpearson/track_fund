@@ -10,10 +10,17 @@
 
 <%= render partial: "navigation" %>
 
-<div class="container">
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: "alert alert-#{name} text-center" %>
-  <% end %>
+<div class="row">
+  <div class="container">
+    <div class="col col-sm-1"></div>
+    <div class="col col-sm-10">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-#{name} text-center" %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
 </div>
 
 <%= yield %>

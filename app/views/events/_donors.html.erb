@@ -1,33 +1,33 @@
 <div class="row">
-  <div class="col col-sm-8 col-sm-offset-2">
-    <div class="well">
-      <h1>Event {name} Dashboard</h1>
-    </div>
-  </div>
-</div>
-
-<div class="row">
   <div class="col col-sm-2"></div>
   <div class="col col-sm-8">
     <div class="panel panel-default">
       <div class="panel-heading"><h3>Donors list</h3></div>
-      <table class="table table-head">next
+      <table class="table table-head">
         <thead>
           <tr>
             <td class="values h5">Name</td>
-            <td class="values h5">Amount</td>
+            <td class="values h5">Pledge</td>
             <td class="values h5">Status</td>
-            <td class="values h5">Last Contact</td>
+            <td class="values h5">Remove form Event</td>
           </tr>
         </thead>
         <tbody>
-          <% @people.each do |person| %>
+          <% @pledges.each do |pledge| %>
             <tr>
-              <td><%= link_to person.first_name + " " + person.last_name, person_path(person.id) %></td>
-              <td></td>
+              <td><%= link_to pledge.name,
+                "https://trackfund.nationbuilder.com/admin/signups/#{pledge.nbuilder_person_id}" %></td>
+              <td>
+                <%= number_to_currency(pledge.amount) %>
+                  <%# <%= link_to person.pledge.amount, donation_form_path %>
+                <%# <% else %>
+                <%# <% end %>
+              </td>
+              <!-- <td><%#= button_to "Paid", "#" %></td> -->
               <td class="btn-group">
                 <button class="btn btn-info">Status</button>
-                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <button type="button" class="btn btn-info dropdown-toggle"
+                  data-toggle="dropdown" aria-expanded="false">
                   <span class="caret"></span>
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
@@ -39,12 +39,13 @@
                   <li><a href="#">Remove from event</a></li>
                 </ul>
               </td>
-              <td>April 3, 2015</td>
+              <td><%#= button_to "Remove", rsvps_path, params: { person_id: person.id, event_id: params[:id] } %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
     </div>
+    <% if @people.count >= 10 %>
     <nav>
       <ul class="pagination">
         <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
@@ -53,6 +54,6 @@
         ...
       </ul>
     </nav>
+    <% end %>
   </div>
 </div>
-

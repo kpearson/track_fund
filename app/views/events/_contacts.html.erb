@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col col-sm-2"></div>
+  <div class="col col-sm-8">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h3>Contact list</h3></div>
+      <table class="table table-head">
+        <thead>
+          <tr>
+            <td class="values h5">Name</td>
+            <td class="values h5">Add to Event</td>
+            <td class="values h5">Last Contacted</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @people.each do |person| %>
+            <tr>
+              <td><%= link_to person.first_name + " " + person.last_name, "https://trackfund.nationbuilder.com/admin/signups/#{person.id}" %></td>
+              <td>
+                <%= form_for @pledge do |f| %>
+                  <%= f.hidden_field :nbuilder_person_id, value: person.id %>
+                  <%= f.hidden_field :nbuilder_event_id, value: params["id"] %>
+                  <%= f.hidden_field :name, value: person.name %>
+                  <%= f.text_field :amount, placeholder: "$30,000" %>
+                  <%= f.submit "Add to event"%>
+                <% end %>
+              </td>
+               <%# <% binding.pry %>
+              <!-- <td class="btn&#45;group"> -->
+              <!--   <button class="btn btn&#45;info">Status</button> -->
+              <!--   <button type="button" class="btn btn&#45;info dropdown&#45;toggle" data&#45;toggle="dropdown" aria&#45;expanded="false"> -->
+              <!--     <span class="caret"></span> -->
+              <!--     <span class="sr&#45;only">Toggle Dropdown</span> -->
+              <!--   </button> -->
+              <!--   <ul class="dropdown&#45;menu" role="menu"> -->
+              <!--     <li><%#= link_to "Commited", dashboard_path %></li> -->
+              <!--     <li><a href="#">Paid</a></li> -->
+              <!--     <li><a href="#">Something else here</a></li> -->
+              <!--     <li class="divider"></li> -->
+              <!--     <li><a href="#">Remove from event</a></li> -->
+              <!--   </ul> -->
+              <!-- </td> -->
+              <td>April 3, 2015</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <% if @people.count >= 10 %>
+    <nav>
+      <ul class="pagination">
+        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        <li class="active"><%= link_to "back", dashboard_path(next_page: @page_back) %></li>
+        <li class="active"><%= link_to "next", dashboard_path(next_page: @page_next) %></li>
+        ...
+      </ul>
+    </nav>
+    <% end %>
+  </div>
+</div>

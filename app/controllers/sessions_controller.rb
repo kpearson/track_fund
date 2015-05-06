@@ -1,13 +1,17 @@
 class SessionsController < ApplicationController
 
-  def new
+  def new_facebook
     redirect_to facebook_login_request
+  end
+
+  def new_nation
+    redirect_to nbuilder.auth_request
   end
 
   def create
     @user = User.find_or_create_from_auth(facebook_user)
     session[:user_id] = @user.id
-    redirect_to user_path(@user)
+    redirect_to dashboard_path
   end
 
   def destroy
@@ -18,7 +22,7 @@ class SessionsController < ApplicationController
 
   private
 
-#TODO: Hoist below into a module
+#TODO: Hoist below into a facebookService class
   def facebook_user
     conn = Faraday.new(facebook_graph_url)
     user_token = facebook_auth["access_token"]
