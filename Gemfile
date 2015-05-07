@@ -16,6 +16,7 @@ gem "omniauth"
 gem "faraday", :require => "faraday"
 gem 'sidekiq'
 gem 'sidetiq'
+gem 'puma'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
