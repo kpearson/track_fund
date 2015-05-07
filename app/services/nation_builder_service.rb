@@ -14,7 +14,6 @@ class NationBuilderService
     end
   end
 
-
   attr_accessor :page, :nation_url, :user_token, :app_id, :app_secret, :connection
 
   def initialize(attributes)

@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   end
 
   def nation_token
+    binding.pry
     token_object = tokens.find_by(provider: "nation_builder")
     token_object.token if token_object
   end
