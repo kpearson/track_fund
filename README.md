@@ -1,27 +1,5 @@
 ## FundBuilder
-https://codeship.com/projects/c7336c10-cc00-0132-2099-5ae9633e9031/status?branch=master
-Fund Board
-
-Words that relate to the produst.
--------------------------------
-Fund raising tracker
-(1)  Fund
-(2)  Funding
-(3)  Raiseing
-(4)  Funding goal
-(5)  Funding pace
-(6)  Fundraising tracker
-(7)  Nation
-(8)  Builder
-(9)  Funding Nation
-(10) Event Nation
-
-Name Ideas:
-- TrackFund
-- FundTab
-- FundPost
-- Fundation
-
+(https://codeship.com/projects/c7336c10-cc00-0132-2099-5ae9633e9031/status?branch=masteri)
 ===================================================
 A fundraising tracker extending Nation Builders API.
 
