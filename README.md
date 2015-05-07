@@ -1,5 +1,7 @@
 ## FundBuilder
-(https://codeship.com/projects/c7336c10-cc00-0132-2099-5ae9633e9031/status?branch=masteri)
+
+[![Codeship Status for kpearson/track_fund](https://codeship.com/projects/c7336c10-cc00-0132-2099-5ae9633e9031/status?branch=master)](https://codeship.com/projects/75898)
+
 ===================================================
 A fundraising tracker extending Nation Builders API.
 
