@@ -15,4 +15,5 @@ class NbuilderContactWorker
     end
     nil
   end
+
 end
