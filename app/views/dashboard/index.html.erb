@@ -1,5 +1,0 @@
-<% if current_user.tokens.find_by(provider: "nation_builder") %>
-  <%= render partial: "nation_authorized" %>
-<% else %>
-  <%= render partial: "unauthorized" %>
-<% end %>

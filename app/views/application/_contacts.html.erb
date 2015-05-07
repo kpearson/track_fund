@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col col-sm-2"></div>
+  <div class="col col-sm-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Contact list
+          <%= link_to 'Back', :back, class: "btn btn-default pull-right" %>
+        </h3>
+      </div>
+      <table class="table table-head">
+        <thead>
+          <tr>
+            <td class="values h5">Name</td>
+            <td class="values h5">Add to Event</td>
+            <td class="values h5">Last Contacted</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @people.each do |person| %>
+            <tr>
+              <td><%= link_to person.first_name + " " + person.last_name, "https://trackfund.nationbuilder.com/admin/signups/#{person.id}" %></td>
+              <td>
+                <%= form_for @pledge do |f| %>
+                  <%= f.hidden_field :nbuilder_person_id, value: person.id %>
+                  <%= f.hidden_field :nbuilder_event_id, value: params["event_id"] %>
+                  <%= f.hidden_field :name, value: person.name %>
+                  <%= f.text_field :amount, placeholder: "$30,000" %>
+                  <%= f.submit "Add to event"%>
+                <% end %>
+              </td>
+              <td>April 3, 2015</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <% if @people.count > 9 %>
+    <nav>
+      <ul class="pagination">
+        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        <li class="active"><%= link_to "back", dashboard_path(next_page: @page_back) %></li>
+        <li class="active"><%= link_to "next", dashboard_path(next_page: @page_next) %></li>
+        ...
+      </ul>
+    </nav>
+    <% end %>
+  </div>
+</div>

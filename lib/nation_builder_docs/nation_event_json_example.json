@@ -1,0 +1,200 @@
+// Known Required fields [status, contact[name, email(valid)], slug(unique), name, start_time, end_time, ]
+// http://nationbuilder.com/event_resource
+// Example event json
+
+// ==================================
+// Minimal new event
+
+{
+"event":
+    {
+            "slug": "kits event",
+            "status": "published",
+            "name": "Kits Events",
+            "contact": {
+                "show_phone": true,
+                "email": "sdfsd@me.com",
+                "show_email": true
+            },
+            "start_time": "2015-10-31T18:00:00-07:00",
+            "end_time": "2015-10-31T21:00:00-07:00"
+        }
+}
+
+// =====================================================
+// All event attributes
+
+{
+    "results": [
+        {
+            "id": 1,
+            "slug": "event_sample_2",
+            "path": "/event_sample_2",
+            "status": "published",
+            "site_slug": "trackfund",
+            "name": "Community Submitted Events",
+            "headline": "Community Submitted Events",
+            "title": "Community Submitted Events - Track Fund",
+            "excerpt": null,
+            "author_id": 2,
+            "published_at": "2013-06-24T14:04:31-07:00",
+            "external_id": null,
+            "tags": [],
+            "intro": "<p><a href=\"http://www.youtube.com/watch?v=7g7QxZeoFh0\">Watch this video</a> to learn how to get the most out of user submitted events.</p>\r\n<p> </p>",
+            "calendar_id": 1,
+            "contact": {
+                "name": "",
+                "phone": null,
+                "show_phone": true,
+                "email": "",
+                "show_email": true
+            },
+            "start_time": "2019-10-31T18:00:00-07:00",
+            "end_time": "2019-10-31T21:00:00-07:00",
+            "time_zone": "Pacific Time (US & Canada)",
+            "rsvp_form": {
+                "phone": "hidden",
+                "address": "hidden",
+                "allow_guests": true,
+                "accept_rsvps": true,
+                "gather_volunteers": false
+            },
+            "capacity": 0,
+            "show_guests": true,
+            "venue": {
+                "name": "Community Submitted Events",
+                "address": {
+                    "address1": "1601 Sunset Blvd",
+                    "address2": "",
+                    "address3": null,
+                    "city": "Houston",
+                    "state": "TX",
+                    "country_code": "US",
+                    "zip": "77005",
+                    "lat": "29.72258",
+                    "lng": "-95.400019"
+                }
+            },
+            "autoresponse": {
+                "broadcaster_id": null,
+                "subject": "RSVP confirmation for Community Submitted Events",
+                "body": null
+            },
+            "shifts": []
+        },
+        {
+            "id": 2,
+            "slug": "event_sample_3",
+            "path": "/event_sample_3",
+            "status": "published",
+            "site_slug": "trackfund",
+            "name": "Why you should accept RSVPs",
+            "headline": "Why you should accept RSVPs",
+            "title": "Why you should accept RSVPs - Track Fund",
+            "excerpt": null,
+            "author_id": 2,
+            "published_at": "2013-06-24T14:08:39-07:00",
+            "external_id": null,
+            "tags": [],
+            "intro": "<p>You'll want to fill your calendar with every public appearance your candidate will be involved with - even t.v., radio, and podcast interviews. </p>\r\n<p>It can be a good practice to accept RSVPs even for events that don't require it. This gives you another touch point to gather supporter contact information and will allow you to follow up with people after the event occurs. Equally important, especially for public events, you can keep track of who actually attended the event (often a subset of the RSVPs), by checking people in at Event settings &gt; Attendees.</p>",
+            "calendar_id": 1,
+            "contact": {
+                "name": "",
+                "phone": null,
+                "show_phone": true,
+                "email": "",
+                "show_email": true
+            },
+            "start_time": "2020-02-01T18:00:00-08:00",
+            "end_time": "2020-02-01T21:00:00-08:00",
+            "time_zone": "Pacific Time (US & Canada)",
+            "rsvp_form": {
+                "phone": "hidden",
+                "address": "hidden",
+                "allow_guests": true,
+                "accept_rsvps": true,
+                "gather_volunteers": false
+            },
+            "capacity": 0,
+            "show_guests": true,
+            "venue": {
+                "name": "RSVP for events when none required",
+                "address": {
+                    "address1": "3919 McKinley Blvd",
+                    "address2": "",
+                    "address3": null,
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "country_code": "US",
+                    "zip": "95819",
+                    "lat": "38.5768127",
+                    "lng": "-121.4511662"
+                }
+            },
+            "autoresponse": {
+                "broadcaster_id": null,
+                "subject": "RSVP confirmation for Why you should accept RSVPs",
+                "body": null
+            },
+            "shifts": []
+        },
+        {
+            "id": 3,
+            "slug": "event_sample_1",
+            "path": "/event_sample_1",
+            "status": "published",
+            "site_slug": "trackfund",
+            "name": "Adding events to your calendar",
+            "headline": "Adding events to your calendar",
+            "title": "Adding events to your calendar - Track Fund",
+            "excerpt": null,
+            "author_id": 2,
+            "published_at": "2013-06-24T14:02:42-07:00",
+            "external_id": null,
+            "tags": [],
+            "intro": "<p><strong>These are sample events. You can delete them from [calendar] &gt; Events &amp; subpages.</strong></p>\r\n<p> </p>\r\n<p><a href=\"http://www.youtube.com/watch?v=8e4Cb9-wA30\">Watch this video</a> to learn how to setup a calendar and publish events.</p>",
+            "calendar_id": 1,
+            "contact": {
+                "name": "",
+                "phone": null,
+                "show_phone": true,
+                "email": "",
+                "show_email": true
+            },
+            "start_time": "2017-02-24T18:00:00-08:00",
+            "end_time": "2017-02-24T21:00:00-08:00",
+            "time_zone": "Pacific Time (US & Canada)",
+            "rsvp_form": {
+                "phone": "hidden",
+                "address": "hidden",
+                "allow_guests": false,
+                "accept_rsvps": false,
+                "gather_volunteers": false
+            },
+            "capacity": 0,
+            "show_guests": false,
+            "venue": {
+                "name": "Adding events to your calendar",
+                "address": {
+                    "address1": "139 Tremont St",
+                    "address2": "",
+                    "address3": null,
+                    "city": "Boston",
+                    "state": "MA",
+                    "country_code": "US",
+                    "zip": "02111",
+                    "lat": "42.355624",
+                    "lng": "-71.0628471"
+                }
+            },
+            "autoresponse": {
+                "broadcaster_id": null,
+                "subject": "RSVP confirmation for Adding events to your calendar",
+                "body": null
+            },
+            "shifts": []
+        }
+    ],
+    "next": null,
+    "prev": null
+}

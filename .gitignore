@@ -20,3 +20,5 @@
 /experiment/*
 
 /.env
+coverage
+todos.md

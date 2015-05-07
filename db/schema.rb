@@ -11,10 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426024234) do
+ActiveRecord::Schema.define(version: 20150507023723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name",               null: false
+    t.integer  "nbuilder_person_id", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pledges", force: :cascade do |t|
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
+    t.integer  "nbuilder_event_id"
+    t.integer  "nbuilder_person_id"
+    t.string   "name"
+    t.boolean  "fulfilled",                                   default: false, null: false
+    t.decimal  "amount",             precision: 10, scale: 2
+  end
 
   create_table "tokens", force: :cascade do |t|
     t.string   "token"

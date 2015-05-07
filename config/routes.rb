@@ -1,17 +1,23 @@
 Rails.application.routes.draw do
 
+  resources :events, except: :index
+
+  get "dashboard", to: "events#index", as: "dashboard"
   resources :people, except: :index
+  resources :rsvps, only: :create
+  resources :pledges, only: [:create, :new]
 
   root "home#index"
   get 'home/index'
 
   resources :users, only: [:show, :edit]
 
-  get 'dashboard', to: "dashboard#index", as: "dashboard"
-  get "login" => "sessions#new"
+
+  get "login" => "sessions#new_facebook"
   get "logout" => "sessions#destroy"
   get "auth/facebook/callback" => "sessions#create"
-  get "auth/nationbuilder/callback" => "dashboard#add_user_token"
-  get "nationbuilder/auth" => "dashboard#new"
-  get "logout_of_nation" => "dashboard#sign_out_nation"
+  get "logout_of_nation" => "users#sign_out_nation"
+
+  get "auth/nationbuilder/callback" => "users#add_user_token"
+  get "nationbuilder/auth" => "sessions#new_nation"
 end

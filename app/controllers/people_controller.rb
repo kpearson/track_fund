@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  require "ostruct"
+  # require "ostruct"
 
   def show
     @person = OpenStruct.new(show_person["person"])
@@ -15,24 +15,25 @@ class PeopleController < ApplicationController
   end
 
   def update
+    People.update(params, nbuilder)
+    redirect_to :back
   end
 
   def destroy
   end
 
   def show_person
-    conn = Faraday.new(nation_url)
-    conn.params = { "access_token" => user_token }
+    connection.params = { "access_token" => user_token }
     JSON.parse(conn.get("/api/v1/people/#{params[:id]}").body)
   end
 
   private
 
-  def user_token
-    current_user.tokens.find_by(provider: "nation_builder").token
+  def connection
+    @connection ||= Faraday.new(nation_url)
   end
 
-  def nation_url
-    "https://trackfund.nationbuilder.com"
+  def user_token
+    current_user.tokens.find_by(provider: "nation_builder").token
   end
 end

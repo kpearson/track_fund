@@ -11,7 +11,7 @@ describe "Nation Builder oauth" do
       fill_in "user_session_email", with: "kitpearson@me.com"
       fill_in "password", with: "password"
     else
-    expect(page).to have_content("Create an Event")
+    expect(page).to have_content("Create Event")
     end
   end
 end

@@ -14,6 +14,8 @@ gem "bootstrap-sass", "~> 3.2.0"
 gem "autoprefixer-rails"
 gem "omniauth"
 gem "faraday", :require => "faraday"
+gem 'sidekiq'
+gem 'sidetiq'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
