@@ -1,4 +1,4 @@
-<% if current_user.tokens.find_by(provider: "nation_builder") %>
+<% if current_user && current_user.tokens.find_by(provider: "nation_builder") %>
   <%= render partial: "dashboard" %>
 <% else %>
   <%= render partial: "unauthorized" %>
