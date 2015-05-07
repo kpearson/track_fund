@@ -13,4 +13,17 @@ class User < ActiveRecord::Base
     user.save
     user
   end
+
+  def nation_token
+    token_object = tokens.find_by(provider: "nation_builder")
+    token_object.token if token_object
+  end
+
+  def nbuilder
+    @nbuilder ||= NationBuilderService.new(
+      nation_token: nation_token,
+      app_secret: ENV.fetch('NATION_SECRET'),
+      app_id:     ENV.fetch('NATION_APPID'),
+    )
+  end
 end

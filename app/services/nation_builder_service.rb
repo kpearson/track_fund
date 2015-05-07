@@ -25,6 +25,7 @@ class NationBuilderService
     @connection = Faraday.new(url: "https://trackfund.nationbuilder.com")
   end
 
+
   def people
     connection.params = { "access_token" => user_token }
     json = parse(connection.get("/api/v1/people"))
@@ -33,6 +34,24 @@ class NationBuilderService
       back:   json['back'],
       people: json['results'].map { |person| OpenStruct.new person },
     )
+  end
+
+  def all_people
+    connection.params = { "access_token" => user_token }
+    people = []
+    url = '/api/v1/people'
+
+    Enumerator.new do |yielder|
+      begin
+        json = parse(connection.get(url))
+        json['results'].each do |result|
+          person = OpenStruct.new(result)
+          people << person
+          yielder << person
+        end
+        url = json['next']
+      end while url
+    end
   end
 
   def person(id)

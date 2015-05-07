@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
   def index
-    # @events = Event.all(nbuilder) if nation_token
-    @events = []
+    @events = Event.all(nbuilder) if nation_token
   end
 
   def new
@@ -20,9 +19,9 @@ class EventsController < ApplicationController
 
   def create
     event = Event.create(params, nbuilder)
-    binding.pry
-    if event.code == "validation_faild"
-      render new, flash[:warning] = "#{event.validation_errors.first}"
+    if event.code == "validation_failed"
+      flash[:warning] = "#{event.validation_errors.first}"
+      redirect_to :back
     else
       redirect_to event_path(event.event["id"])
     end
@@ -31,6 +30,10 @@ class EventsController < ApplicationController
   def edit
     @pledge = Pledge.new
     @event  = Event.find(params[:id], nbuilder)
+    @people = nbuilder.people if nation_token
+  end
+
+  def add_doners
     @people = nbuilder.people if nation_token
   end
 

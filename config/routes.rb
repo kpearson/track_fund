@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   resources :events, except: :index
+
   get "dashboard", to: "events#index", as: "dashboard"
   resources :people, except: :index
   resources :rsvps, only: :create
-  resources :pledges, only: :create
+  resources :pledges, only: [:create, :new]
 
   root "home#index"
   get 'home/index'

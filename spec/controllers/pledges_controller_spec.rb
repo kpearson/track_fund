@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe PledegeController do
+describe PledgesController do
   xit "creats a new pledge with a nation_person and nation_event" do
     pledge = Pledge.new
   end

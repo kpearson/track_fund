@@ -6,17 +6,11 @@ class ApplicationController < ActionController::Base
   private
 
   def nbuilder
-    @nbuilder ||= NationBuilderService.new(
-      page:       params[:next_page],
-      nation_token: nation_token,
-      app_secret: ENV.fetch('NATION_SECRET'),
-      app_id:     ENV.fetch('NATION_APPID'),
-    )
+    current_user.nbuilder if current_user
   end
 
   def nation_token
-    token_object = current_user.tokens.find_by(provider: "nation_builder") if current_user
-    token_object.token if token_object
+    current_user.nation_token if current_user
   end
 
   def current_user
