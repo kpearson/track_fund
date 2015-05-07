@@ -14,8 +14,8 @@ gem "bootstrap-sass", "~> 3.2.0"
 gem "autoprefixer-rails"
 gem "omniauth"
 gem "faraday", :require => "faraday"
-gem 'sidekiq'
-gem 'sidetiq'
+# gem 'sidekiq'
+# gem 'sidetiq'
 gem 'puma'
 gem 'rails_12factor', group: :production
 
