@@ -17,6 +17,7 @@ gem "faraday", :require => "faraday"
 gem 'sidekiq'
 gem 'sidetiq'
 gem 'puma'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
