@@ -19,11 +19,7 @@
                 "https://trackfund.nationbuilder.com/admin/signups/#{pledge.nbuilder_person_id}" %></td>
               <td>
                 <%= number_to_currency(pledge.amount) %>
-                  <%# <%= link_to person.pledge.amount, donation_form_path %>
-                <%# <% else %>
-                <%# <% end %>
               </td>
-              <!-- <td><%#= button_to "Paid", "#" %></td> -->
               <td class="btn-group">
                 <button class="btn btn-info">Status</button>
                 <button type="button" class="btn btn-info dropdown-toggle"
@@ -39,7 +35,7 @@
                   <li><a href="#">Remove from event</a></li>
                 </ul>
               </td>
-              <td><%#= button_to "Remove", rsvps_path, params: { person_id: person.id, event_id: params[:id] } %></td>
+              <td><%= button_to "Remove", rsvps_path, params: { person_id: pledge.id, event_id: params[:id] } %></td>
             </tr>
           <% end %>
         </tbody>
