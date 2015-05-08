@@ -17,5 +17,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.home {
+  background-image: url('/assets/fund_event.png');
+  width: 100%;
+  min-height: 80%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+
+.home-call h1 {
+  color: white;
+  margin-top: 30%;
+}
+
 
 h3 .btn-group { display: inline-block; }

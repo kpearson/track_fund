@@ -23,7 +23,7 @@
                 <%= form_for @pledge do |f| %>
                   <%= f.hidden_field :nbuilder_person_id, value: person.id %>
                   <%= f.hidden_field :nbuilder_event_id, value: params["event_id"] %>
-                  <%= f.hidden_field :name, value: person.name %>
+                  <%= f.hidden_field :name, value: "#{person.first_name}" + " " + "#{person.last_name}" %>
                   <%= f.text_field :amount, placeholder: "$30,000" %>
                   <%= f.submit "Add to event"%>
                 <% end %>
