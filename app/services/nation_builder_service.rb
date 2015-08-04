@@ -78,8 +78,18 @@ class NationBuilderService
     connection.params = params
     connection.params["event"]["slug"] = params["event"]["name"].parameterize
     connection.params["access_token"] = user_token
-    connection.headers['Content-Type'] = 'application/json'
+    connection.headers['content-type'] = 'application/json'
+    binding.pry
     parse(connection.post("api/v1/sites/trackfund/pages/events"))
+  end
+
+  def event_update(params)
+    connection.params = params
+    connection.params["event"]["contact"] = connection.params["event"].delete "contact_attributes"
+    connection.params["access_token"] = user_token
+    connection.headers['content-type'] = 'application/json'
+    binding.pry
+    parse(connection.put("api/v1/sites/trackfund/pages/events/#{params[:id]}"))
   end
 
   def rsvp_create(params)

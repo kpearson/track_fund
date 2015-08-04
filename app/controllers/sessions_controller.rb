@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorize
 
   def new_facebook
     redirect_to facebook_login_request

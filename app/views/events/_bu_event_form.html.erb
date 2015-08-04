@@ -1,0 +1,119 @@
+<div class="contianer">
+  <form>
+    <%= form_tag "/events", method: :post do %>
+    <div class="form-group">
+      <%= label_tag "Event name" %>
+      <%= text_field_tag "event[name]", nil, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag  "Contact name" %>
+      <%= text_field_tag  "event[contact][name]", nil, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag  "Contact phone" %>
+      <%= text_field_tag  "event[contact][phone]", nil, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag  "Contact email" %>
+      <%= text_field_tag  "event[contact][email]", nil, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag  "Start Date" %>
+      <%= date_field_tag "event[start_time]", nil, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag  "End Date" %>
+      <%= date_field_tag "event[end_time]", nil, class: "form-control" %>
+    </div>
+    <%= hidden_field_tag "event[status]", "unlisted" %>
+    <%= submit_tag nil, class: "btn btn-submit" %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="well col col-sm-8 col-sm-offset-2">
+      <fieldset>
+        <legend><%= @event.name %></legend>
+        <%= form_tag "/events/#{@event.id}", method: :put, class: "form-horizontal" %>
+          <div class="form-group">
+            <%= label_tag "event", "Event Name:", class: "col-sm-2" %>
+            <div class="col-md-10">
+              <%= text_field_tag :name, nil, value: @event.name, class: "form-control", required: true %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= label_tag "event", "Contact Name:", class: "col-sm-2" %>
+            <div class="col-md-10">
+              <%= text_field_tag "event[:contact][:name]", nil, value: @event.contact[:name], class: "form-control", required: true %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= label_tag "event[:contact]", "Contact phone:", class: "col-sm-2" %>
+            <div class="col-md-10">
+              <%= text_field_tag "event[:contact][:phone]", nil, class: "form-control", required: true  %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= label_tag "event[:contact][:email]", "Contact email:", class: "col-sm-2" %>
+            <div class="col-md-10">
+              <%= text_field_tag "event[:contact][:email]", nil, class: "form-control", required: true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= label_tag "event", "Start Date:", class: "col-sm-2" %>
+            <div class="col-md-4 input-group" id="start-date" >
+              <%= datetime_field_tag "event[:start_time]", nil, value: :start_time, class: "form-control", required: true  %>
+              <span class="input-group-addon">
+                <span class="fa fa-calendar"></span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= label_tag "event", "end date", class: "col-sm-2" %>
+            <div class="col-md-4 input-group" id="end-date" >
+              <%= datetime_field_tag "event[:end_time]", nil, value: :end_time, class: "form-control", required: true  %>
+              <span class="input-group-addon">
+                <span class="fa fa-calendar"></span>
+              </span>
+            </div>
+          </div>
+          <%#= f.hidden_field :status, "unlisted" %>
+          <div class="control-group">
+            <div class="col-sm-4 col-sm-offset-2">
+              <%= submit_tag "Update Event", class: "btn btn-primary" %>
+              <%= link_to 'Back', :back, class: "btn btn-default" %>
+            </div>
+          </div>
+      </fieldset>
+  </div><!-- col -->
+</div><!-- row -->
+
+<script type="text/javascript">
+  $(function () {
+    $('#start-date').datetimepicker({
+      icons: {
+        time: "fa fa-clock-o",
+        date: "fa fa-calendar",
+        previous: "fa fa-arrow-left",
+        next: "fa fa-arrow-right"
+      }
+    });
+
+    $('#end-date').datetimepicker({
+      icons: {
+        time: "fa fa-clock-o",
+        date: "fa fa-calendar",
+        previous: "fa fa-arrow-left",
+        next: "fa fa-arrow-right"
+      }
+    });
+
+    $("#start-date").on("dp.change", function (e) {
+      $('#end-date').data("DateTimePicker").minDate(e.date);
+    });
+
+    $("#end-date").on("dp.change", function (e) {
+        $('#start-date').data("DateTimePicker").maxDate(e.date);
+    });
+  });
+</script>

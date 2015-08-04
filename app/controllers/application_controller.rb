@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :authorize
 
-  helper_method :current_user, :nbuilder, :nation_token
+  helper_method :current_user, :nation_token, :authorize
 
   private
+
+  def authorize
+    redirect_to root_path unless current_user
+  end
 
   def nbuilder
     current_user.nbuilder if current_user

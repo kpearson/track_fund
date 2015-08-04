@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem "dotenv-rails", :groups => [:development, :test]
 gem 'rails', '4.2.1'
 gem 'pg'
+gem 'bcrypt', '~> 3.1.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -14,13 +14,15 @@ gem "bootstrap-sass", "~> 3.2.0"
 gem "autoprefixer-rails"
 gem "omniauth"
 gem "faraday", :require => "faraday"
-# gem 'sidekiq'
-# gem 'sidetiq'
 gem 'puma'
-gem 'rails_12factor', group: :production
 gem 'newrelic_rpm'
+gem "font-awesome-rails"
+gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+gem 'activeresource'
 
 group :development, :test do
+  gem "dotenv-rails"
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rspec-rails', '~> 3.0'
@@ -33,6 +35,7 @@ group :development do
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'spring-commands-rspec'
+  gem 'rails_12factor'
 end
 
 group :test do
@@ -43,9 +46,3 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
 end
-
-group :production do
-  gem 'rails_12factor'
-end
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'

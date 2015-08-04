@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
   def nbuilder
     @nbuilder ||= NationBuilderService.new(
       nation_token: nation_token,
-      app_secret: ENV.fetch('NATION_SECRET'),
-      app_id:     ENV.fetch('NATION_APPID'),
+      app_secret:   ENV.fetch('NATION_SECRET'),
+      app_id:       ENV.fetch('NATION_APPID')
     )
   end
 end

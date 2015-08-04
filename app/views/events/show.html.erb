@@ -4,7 +4,7 @@
       <h1><%= @event.name %> Dashboard
         <span class="pull-right">
           <%= link_to "Edit Event", edit_event_path(@event.id), class: "btn btn-default" %>
-          <%= link_to "Add people", new_pledge_path(event_id: params["id"]), class: "btn btn-default" %>
+          <%= link_to "Edit Guest List", new_pledge_path(event_id: params["id"]), class: "btn btn-default" %>
         </span>
       </h1>
     </div>

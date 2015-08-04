@@ -40,13 +40,14 @@
         </tbody>
       </table>
     </div>
-    <% if @people.count >= 10 %>
+
+    <% if @pledges.count >= 10 %>
     <nav>
       <ul class="pagination">
         <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
         <li class="active"><%= link_to "back", dashboard_path(next_page: @page_back) %></li>
         <li class="active"><%= link_to "next", dashboard_path(next_page: @page_next) %></li>
-        ...
+        <li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
       </ul>
     </nav>
     <% end %>
