@@ -1,5 +1,9 @@
 <% if current_user && current_user.tokens.find_by(provider: "nation_builder") %>
-  <%= render partial: "dashboard" %>
+  <% if @event %>
+    <%= render partial: "dashboard" %>
+  <% else %>
+    <%= render partial: "first_event" %>
+  <% end %>
 <% else %>
   <%= render partial: "authorize_nation_builder" %>
 <% end %>
