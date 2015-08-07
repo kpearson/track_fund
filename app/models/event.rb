@@ -3,18 +3,7 @@ require 'active_resource'
 class Event < ActiveResource::Base
   self.site = "https://trackfund.nationbuilder.com"
 
-  has_many :contact
-
-  # def contact
-  #   @contact
-  # end
-
   def contact_attributes=(attributes)
-    {
-      "name" => attribute[:name],
-      "phone" => attributes[:phone],
-      "email" => attributes[:email]
-    }
   end
 
   def persisted=(arg)
@@ -39,5 +28,13 @@ class Event < ActiveResource::Base
 
   def self.all_rsvps(rsvps, nbuilder)
     rsvps.map { |rsvp| new(nbuilder.person(rsvp.id)) }
+  end
+
+  def self.destroy(params, nbuilder)
+    nbuilder.event_destroy(params)
+  end
+
+  def self.publish(params, nbuilder)
+    nbuilder.event_publish(params)
   end
 end

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "dashboard", to: "events#index", as: "dashboard"
   get "login" => "sessions#new_facebook"
   get "logout" => "sessions#destroy"
+  put "publish", to: "events#publish", as: "event_publish"
 
   get "auth/facebook/callback" => "sessions#create"
   get "logout_of_nation" => "users#sign_out_nation"
