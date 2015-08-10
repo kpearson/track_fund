@@ -20,14 +20,33 @@
 @import 'bootstrap-datetimepicker';
 @import url(http://fonts.googleapis.com/css?family=Lato);
 
+
+.navbar {
+  border-style: none;
+  background-color: rgba( #fff, 0.75 );
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.navbar-default .navbar-nav li a {
+  color: black;
+}
+
+.navbar-default .navbar-brand {
+  color: black;
+}
+
 .home {
-  background-image: url('/assets/fund_event.png');
   width: 100%;
-  min-height: 80%;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
+  height: 70vh;
+  position: relative;
+  background-image: url('/assets/fund_event.png');
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  &:nth-child(2n) {
+    box-shadow: inset 0 0 1em #111;
+  }
 }
 
 .jumbotron h1 {
@@ -35,13 +54,51 @@
   margin-top: 20%;
 }
 
-h3 .btn-group {
-  display: inline-block;
+.prop-bar {
+  height: 30vh;
+  // background: blue;
+  text-align:center;
+}
+
+.prop-bar h2 {
+  text-align: center;
+}
+
+@mixin prop-box {
+  display:inline-block;
+  height: 85%;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: black;
+  font-weight: 200;
+  margin-top: 3vh;
+  padding: 1vh 3vh;
+  text-align:left;
+}
+
+.prop-box-right {
+  @include prop-box;
+  margin-right: 5vh;
+}
+
+.prop-box-center {
+  @include prop-box;
+  margin-right: 5vh;
+}
+
+.prop-box-left {
+  @include prop-box;
+  margin-right: -5vh;
 }
 
 h3 {
   font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
+}
+
+h3 .btn-group {
+  display: inline-block;
 }
 
 .section-heading-spacer {
