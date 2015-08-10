@@ -76,7 +76,7 @@ class NationBuilderService
 
   def event_create(params)
     connection.params = params
-    connection.params["event"]["slug"] = params["event"]["name"].parameterize
+    connection.params["event"]["contact"] = params["event"].delete "contact_attributes"
     connection.params["access_token"] = user_token
     connection.headers['content-type'] = 'application/json'
     parse(connection.post("api/v1/sites/trackfund/pages/events"))
