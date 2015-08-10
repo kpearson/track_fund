@@ -1,9 +1,10 @@
 require "simplecov"
+require "vcr"
+
 SimpleCov.start do
   add_filter "/spec/"
   add_filter "/config/"
 end
-require "vcr"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
