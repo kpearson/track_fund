@@ -24,4 +24,5 @@ class PledgesController < ApplicationController
                                    :fulfilled,
                                    :amount)
   end
+
 end

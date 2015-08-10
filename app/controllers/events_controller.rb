@@ -12,13 +12,14 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new("name" => nil,
+    @event = Event.new("name"       => nil,
                        "start_time" => nil,
-                       "end_time" => nil,
-                       "contact" => { "name" => nil,
-                                      "phone" => nil,
-                                      "email" => nil
-    })
+                       "end_time"   => nil,
+                       "contact"    => { "name"  => nil,
+                                         "phone" => nil,
+                                         "email" => nil
+                                       }
+                      )
   end
 
   def create
