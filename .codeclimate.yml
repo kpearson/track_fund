@@ -1,5 +1,5 @@
 languages:
   Ruby: true
   JavaScript: true
-  exclude_paths:
-    - "app/assets/javascripts/*"
+exclude_paths:
+- "app/assets/javascripts/*"
