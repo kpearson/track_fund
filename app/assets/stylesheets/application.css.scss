@@ -62,8 +62,8 @@
 }
 
 .prop-bar {
-  height: 30vh;
-  text-align:center;
+  height: 40vh;
+  text-align: center;
   h2 {
     text-align: center;
   }
@@ -77,7 +77,7 @@
 @mixin prop-box {
   @include box-outline;
   display:inline-block;
-  height: 85%;
+  height: 65%;
   background-color: lightgray;
   color: black;
   font-weight: 200;
@@ -129,13 +129,17 @@ h3 .btn-group {
 
 .scroll-test {
   @include background-image;
-  height: 30vh;
+  height: 40vh;
   width: 100%;
+  padding-top: 15vh;
 }
 
 .scroll-test-2 {
-  height: 30vh;
+  padding-top: 5vh;
+  text-align: center;
+  height: 25vh;
   width: 100%;
+  background-color: rgba( #fff, 0.75 );
 }
 
 @font-face {
