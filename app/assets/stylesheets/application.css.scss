@@ -29,6 +29,12 @@
   padding-right: 10%;
 }
 
+.alert {
+  position: fixed;
+  z-index: 1;
+  margin: 10vh 2vh 2vh 0;
+}
+
 @mixin nav-color {
   color: black;
 }
@@ -48,7 +54,7 @@
 
 @mixin background-image {
   position: relative;
-  background-image: url('/assets/fund_event.png');
+  background-image: image-url("fund_event.png");
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
