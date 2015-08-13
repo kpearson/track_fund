@@ -8,6 +8,7 @@ __Track Fund__ is fundraising event dashboard extending the
 [Nation Builders](http://nationbuilder.com/) API.
 
 [Track Fund](https://trackfund.herokuapp.com/) on Heroku
+
 Built exclusively by __[Kit Pearson](https://github.com/kpearson)__
 
 The MIT License (MIT)
