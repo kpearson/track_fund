@@ -20,11 +20,14 @@
 @import 'bootstrap-datetimepicker';
 @import url(http://fonts.googleapis.com/css?family=Lato);
 
+body {
+  background-color: #F6F6F5;
+}
 
 .navbar {
   min-height: 7%;
   border-style: none;
-  background-color: rgba( #fff, 0.75 );
+  background-color: #323543;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -36,7 +39,7 @@
 }
 
 @mixin nav-color {
-  color: black;
+  color: #fff;
 }
 
 .navbar-default {
@@ -69,6 +72,7 @@
 
 .prop-bar {
   height: 40vh;
+  background-color: #F6F6F5;
   text-align: center;
   h2 {
     text-align: center;
@@ -84,7 +88,7 @@
   @include box-outline;
   display:inline-block;
   height: 65%;
-  background-color: lightgray;
+  background-color: #fff;
   color: black;
   font-weight: 200;
   margin-top: 3vh;

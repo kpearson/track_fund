@@ -1,7 +1,9 @@
-# [FundBuilder](https://trackfund.herokuapp.com/)
+# [Track Fund](https://trackfund.herokuapp.com/)
 
 [![Codeship Status for kpearson/track_fund](https://codeship.com/projects/c7336c10-cc00-0132-2099-5ae9633e9031/status?branch=master)](https://codeship.com/projects/75898)
 [![Code Climate](https://codeclimate.com/github/kpearson/track_fund/badges/gpa.svg)](https://codeclimate.com/github/kpearson/track_fund)
+
+[Track Fund](https://trackfund.herokuapp.com/) on Heroku
 
 ===================================================
 __Track Fund__ is fundraising event dashboard extending the
