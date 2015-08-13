@@ -10,9 +10,10 @@
       <tr>
         <td><%= link_to event.name, event_path(event.id) %></td>
         <td><%#= event.discription %></td>
-        <td> <%#= button_to "Publish", event_publish_path(event), method: :put, params: { status: :listed, :id => event.id } %></td>
-        <td> <%= button_to "Delete",  { action: "destroy", id: event.id },
-        method: :delete, data: { confirm: "Are you sure?" }%>
+        <td><%#= button_to "Publish", event_publish_path(event), method: :put, params: { status: :listed, :id => event.id } %></td>
+        <td>
+          <%= button_to "Delete", event_path(event.id),
+              method: :delete, data: { confirm: "Are you sure?" } %>
         </td>
       </tr>
     <% end %>
