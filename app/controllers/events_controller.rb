@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all(nbuilder) if nation_token
+    @events = Event.all(current_user) if nation_token
   end
 
   def show
@@ -28,10 +28,10 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @pledge = Pledge.new
-    @event  = Event.find(params[:id], nbuilder)
+    @pledge          = Pledge.new
+    @event           = Event.find(params[:id], nbuilder)
     @event.persisted = true
-    @people = nbuilder.people if nation_token
+    @people          = nbuilder.people if nation_token
   end
 
   def update
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
   end
 
   def publish
-    event = Event.find(params[:id], nbuilder)
+    Event.find(params[:id], nbuilder)
     Event.publish(params, nbuilder)
     redirect_to :back
   end

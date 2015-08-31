@@ -10,8 +10,17 @@ class Event < ActiveResource::Base
     @persisted = arg
   end
 
-  def self.all(nbuilder)
-    nbuilder.events["results"].map { |event| new(event) }
+  def self.nation_builder_service(user)
+    @service ||= NationBuilder::Service.new(
+      nation_token: user.nation_token,
+      app_secret:   ENV.fetch('NATION_SECRET'),
+      app_id:       ENV.fetch('NATION_APPID')
+    )
+  end
+
+  def self.all(user)
+    service = nation_builder_service(user)
+    service.events["results"].map { |event| new(event) }
   end
 
   def self.find(id, nbuilder)
