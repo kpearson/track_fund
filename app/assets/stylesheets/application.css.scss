@@ -27,9 +27,38 @@ body {
 .navbar {
   min-height: 7%;
   border-style: none;
-  background-color: #323543;
+  background-color: transparent;
   padding-left: 10%;
   padding-right: 10%;
+  transition: all .3s;
+}
+
+.scrolled {
+  background-color: hsla(256, 0, 10%, .5);
+}
+
+.nav {
+  .button {
+    border-radius: 7px;
+    text-align: center;
+    max-height: 20px;
+    margin-top: 10px;
+    padding-bottom: 25px;
+    padding-top: 5px;
+    background-color: hsl(256, 0, 25%);
+    transition: all .4s;
+  }
+ .button:hover {
+    color: white !important;
+    background-color: hsl(256, 0, 40%) !important;
+    text-decoration: none !important;
+  }
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: white;
+  text-decoration: underline;
 }
 
 .alert {
