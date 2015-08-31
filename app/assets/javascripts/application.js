@@ -17,3 +17,14 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require_tree .
+
+jQuery(window).scroll(function(){
+    var fromTopPx = 300; // distance to trigger
+    var scrolledFromtop = jQuery(window).scrollTop();
+    if(scrolledFromtop > fromTopPx){
+      console.log("Hello")
+        jQuery('.navbar').addClass('scrolled');
+    }else{
+        jQuery('.navbar').removeClass('scrolled');
+    }
+});
