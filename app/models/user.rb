@@ -1,3 +1,5 @@
+require "nation_builder_service"
+
 class User < ActiveRecord::Base
   has_many :tokens
 
@@ -19,11 +21,13 @@ class User < ActiveRecord::Base
     token_object.token if token_object
   end
 
+  include NationBuilder
   def nbuilder
-    @nbuilder ||= NationBuilderService.new(
+    @nbuilder ||= NationBuilder::Service.new(
       nation_token: nation_token,
       app_secret:   ENV.fetch('NATION_SECRET'),
       app_id:       ENV.fetch('NATION_APPID')
     )
   end
+
 end
