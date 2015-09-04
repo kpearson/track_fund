@@ -8,7 +8,7 @@ describe "Nation Builder oauth" do
     visit "/dashboard"
     click_button "Access your nation"
     if page.has_content?("I have an account")
-      fill_in "user_session_email", with: "kitpearson@me.com"
+      fill_in "user_session_email", with: "user@example.com"
       fill_in "password", with: "password"
     else
     expect(page).to have_content("Create Event")
