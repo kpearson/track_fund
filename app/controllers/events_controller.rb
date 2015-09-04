@@ -40,7 +40,11 @@ class EventsController < ApplicationController
   end
 
   def publish
+<<<<<<< HEAD
     Event.find(params[:id], nbuilder)
+=======
+    event = Event.find(params[:id], nbuilder)
+>>>>>>> 1f65346f3457558edd501f62ad520f141394eb01
     Event.publish(params, nbuilder)
     redirect_to :back
   end
