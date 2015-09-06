@@ -1,7 +1,7 @@
 class PledgesController < ApplicationController
 
   def new
-    @people  = nbuilder.people if nation_token
+    @people = nbuilder.people if nation_token
     @pledge = Pledge.new
   end
 

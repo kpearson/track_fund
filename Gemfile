@@ -13,7 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "bootstrap-sass", "~> 3.2.0"
 gem "autoprefixer-rails"
 gem "omniauth"
-gem "faraday", :require => "faraday"
+gem "faraday", '= 0.8', :require => "faraday"
 gem 'puma'
 gem 'newrelic_rpm'
 gem "font-awesome-rails"
