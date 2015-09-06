@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Nation Builder oauth" do
-  it "gets a user auth token" do
+  xit "gets a user auth token" do
     user = create :user
     allow_any_instance_of(ApplicationController).to receive(:current_user).
       and_return(user)

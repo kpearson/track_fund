@@ -28,7 +28,7 @@ describe "Nation Builder Service", :vcr  do
   context "events for a given user" do
     it "all" do
       VCR.use_cassette('events') do
-        expect((nation_builder_connection.events)["results"].count).to eq 6
+        expect((nation_builder_connection.events)["results"].count).to eq 10
       end
     end
 
