@@ -13,8 +13,9 @@ coverage
 # Ignore dotenv environment variables
 /.env*
 
+# Ignore test fixture cassettes
+/spec/fixtures/vcr_cassettes/*
+coverage
+
 # Ignore local notes.
 todos.md
-
-# Ignore VCR cassettes
-/spec/fixtures/vcr_cassettes/
