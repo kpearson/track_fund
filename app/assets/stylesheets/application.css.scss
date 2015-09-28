@@ -45,6 +45,11 @@ body {
 .navbar-default {
   .navbar-nav li a {
     @include nav-color;
+    transition: all .2s
+  }
+  .navbar-nav li a:hover {
+    font-size: 120%;
+    color: lightgray;
   }
   .navbar-brand {
     @include nav-color;
