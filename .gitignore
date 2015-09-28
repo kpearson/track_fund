@@ -19,6 +19,7 @@
 /experiment
 /experiment/*
 
-/.env
+/.env*
+/spec/fixtures/vcr_cassettes/*
 coverage
 todos.md
